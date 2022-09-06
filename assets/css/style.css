@@ -1073,7 +1073,8 @@ section .container {
 	background: #15bb62;
 }
 
-.container button[type="submit"] {
+.container .download-btn {
+	cursor: pointer;
 	background: #18d26e;
 	border: 0;
 	padding: 10px 30px;
@@ -1082,7 +1083,7 @@ section .container {
 	border-radius: 4px;
 }
 
-.container button[type="submit"]:hover {
+.container .download-btn:hover {
 	background: #15bb62;
 }
 
