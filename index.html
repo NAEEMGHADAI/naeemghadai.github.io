@@ -1193,11 +1193,13 @@
         </div> -->
         </div>
 
-        <form
-          method="POST"
-          action="https://formsubmit.co/ghadai.naeem@gmail.com"
-          class="php-email-form mt-4"
-        >
+        <form id="contactForm" class="php-email-form mt-4">
+          <div id="successMessage" class="message success">
+            Your message has been sent successfully!
+          </div>
+          <div id="errorMessage" class="message error">
+            Failed to send message. Please try again later.
+          </div>
           <div class="form-row">
             <div class="col-md-6 form-group">
               <input
@@ -1206,6 +1208,7 @@
                 class="form-control"
                 id="name"
                 placeholder="Your Name"
+                required
               />
             </div>
             <div class="col-md-6 form-group">
@@ -1215,6 +1218,7 @@
                 name="email"
                 id="email"
                 placeholder="Your Email"
+                required
               />
             </div>
           </div>
@@ -1225,6 +1229,7 @@
               name="subject"
               id="subject"
               placeholder="Subject"
+              required
             />
           </div>
           <div class="form-group">
@@ -1233,6 +1238,7 @@
               name="message"
               rows="5"
               placeholder="Message"
+              required
             ></textarea>
           </div>
           <div class="text-center">
@@ -1242,6 +1248,46 @@
       </div>
     </section>
     <!-- End Contact Section -->
+
+    <!-- Add EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      // Initialize EmailJS with your User ID
+      (function () {
+        emailjs.init("h-wqVcOL7JAWmMCj5"); // Replace "YOUR_USER_ID" with your EmailJS user ID
+      })();
+
+      // JavaScript to handle form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Send form data to EmailJS
+          emailjs
+            .sendForm("service_gnrtmkv", "template_8aigfna", this) // Replace with your EmailJS Service ID and Template ID
+            .then(
+              function () {
+                // Show success message
+                document.getElementById("successMessage").style.display =
+                  "block";
+                document.getElementById("errorMessage").style.display = "none";
+                // Reset form fields
+                document.getElementById("contactForm").reset();
+              },
+              function (error) {
+                // Show error message
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("successMessage").style.display =
+                  "none";
+                console.error("EmailJS Error:", error);
+              }
+            );
+        });
+    </script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
