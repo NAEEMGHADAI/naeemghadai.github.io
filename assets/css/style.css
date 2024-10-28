@@ -903,7 +903,7 @@ section .container {
 # Contact
 --------------------------------------------------------------*/
 
-.message {
+.contact .message {
   text-align: center;
   padding: 10px;
   display: none;
@@ -911,12 +911,12 @@ section .container {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.success {
+.contact .success {
   color: #155724;
   background-color: #d4edda;
   border: 1px solid #c3e6cb;
 }
-.error {
+.contact .error {
   color: #721c24;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
