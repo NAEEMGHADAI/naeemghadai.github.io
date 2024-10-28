@@ -902,6 +902,26 @@ section .container {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+.message {
+  text-align: center;
+  padding: 10px;
+  display: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
 .contact .info-box {
   color: #444444;
   padding: 20px;
@@ -1071,25 +1091,6 @@ section .container {
 
 .contact .php-email-form button[type="submit"]:hover {
   background: #15bb62;
-}
-
-.message {
-  text-align: center;
-  padding: 10px;
-  display: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.success {
-  color: #155724;
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-}
-.error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
 }
 
 .container .download-btn {
